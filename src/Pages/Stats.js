@@ -12,8 +12,8 @@ function Stats() {
       const request = async ()=>{
         try{
           const response = await getStats()
-          if(response.data.results){
-            setStats(response.data.results)
+          if(response.data){
+            setStats(response.data)
             setLoading(false)
           }
         }catch(e){
@@ -34,7 +34,9 @@ function Stats() {
   }else{
     return (
       <div className="body">
-        {<Gen datos={stats} />}
+        <p>Mutantes: {stats.CountMutantDNA}</p>
+        <p>Humanos: {stats.CountHumantDNA}</p>
+        <p>Ratio: {stats.Ratio}</p>
       </div>
     );
   }
