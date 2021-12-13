@@ -181,3 +181,17 @@ select{
 li{
   list-style: none;
 }
+
+.Menu{
+  display:inline;
+  padding-left:3px;
+  padding-right:3px;
+}
+.BordeMenu{
+  background-color: white;
+  padding-right: 2em;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
