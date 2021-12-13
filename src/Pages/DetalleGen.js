@@ -35,6 +35,7 @@ function DetalleGen() {
   }else{
     return (
       <div>
+        <p>{gen.id}</p>
         <p>{gen.Dna.map(genesCadenas=><li>{genesCadenas}</li>)}</p>
         <p>{moment(gen.FechaAlta).format('DD/MM/YYYY HH:mm:SS')}</p>
       </div>
