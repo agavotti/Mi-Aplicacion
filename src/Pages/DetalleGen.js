@@ -7,7 +7,6 @@ function DetalleGen() {
   const [gen,setGen] = useState({})
   const [loading,setLoading] = useState(true)
   const {id} = useParams();
-  console.log("id",id)
   useEffect(
     ()=>{
       const request = async ()=>{
@@ -37,11 +36,21 @@ function DetalleGen() {
       <div>
         <p>{gen.id}</p>
         <p>{gen.Dna.map(genesCadenas=><li>{genesCadenas}</li>)}</p>
-        <p>{moment(gen.FechaAlta).format('DD/MM/YYYY HH:mm:SS')}</p>
+        <p>Es Mutante: {booleanToString(gen.EsMutante)}</p>
+        <p>Fecha alta: {moment(gen.FechaAlta).format('DD/MM/YYYY HH:mm:SS')}</p>
       </div>
     );
   }
   
+}
+
+
+function booleanToString(bool){
+  switch(bool){
+      case true: return "Si";
+      case false: return "No";
+      default: return String(bool);
+  }
 }
 
 export default DetalleGen;

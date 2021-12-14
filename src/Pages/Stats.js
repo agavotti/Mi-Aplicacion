@@ -34,9 +34,7 @@ function Stats() {
   }else{
     return (
       <div className="body">
-        <p>Mutantes: {stats.CountMutantDNA}</p>
-        <p>Humanos: {stats.CountHumantDNA}</p>
-        <p>Ratio: {stats.Ratio}</p>
+        {<Gen datos={stats} />}
       </div>
     );
   }

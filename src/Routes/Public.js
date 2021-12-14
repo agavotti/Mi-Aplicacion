@@ -19,7 +19,7 @@ function Public() {
             <Menu />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/detalle" element={<DetalleGen />} />
+                <Route path="/Gen/:id" element={<DetalleGen />} />
                 <Route path="/stats" element={<Stats />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />

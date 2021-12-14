@@ -16,10 +16,7 @@ function Home() {
       console.log("useEffect")
       getAll()
       .then(response=>{
-        console.log("entre")
-        console.log("data",response.data)
         if(response.data){
-          console.log("ya hice el set")
           setLoading(false)
           setGenes(response.data)
           

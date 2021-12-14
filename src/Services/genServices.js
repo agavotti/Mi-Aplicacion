@@ -3,7 +3,7 @@ export function getAll() {
   return instance.get("all");
 }
 export function getByID(id) {
-  return instance.get("Gen/" + id);
+  return instance.get("mutant/" + id);
 }
 
 export function getStats() {
