@@ -191,7 +191,11 @@ li{
   background-color: white;
   padding-right: 2em;
 }
+
 a{
   text-decoration: none;
   color: black;
+}
+.withe{
+  color: white;
 }

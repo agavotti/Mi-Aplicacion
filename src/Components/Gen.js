@@ -8,7 +8,7 @@ function Gen(props) {
     <div className="" >
      <p>ID: {datos.ID}</p>
      <p>Genes: {datos.Dna.map(genesCadenas=><li>{genesCadenas}</li>)}</p>
-     <button className="btn btn-white"><Link to={'/Gen/'+datos.ID}>Ver Detalle Gen</Link></button>
+     <button className="btn btn-white"><Link to={'/Gen/'+datos.ID} className='withe'>Ver Detalle Gen</Link></button>
 
     </div>
   );
