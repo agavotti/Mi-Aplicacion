@@ -5,7 +5,11 @@ export function getAll() {
 export function getByID(id) {
   return instance.get("mutant/" + id);
 }
-
+export function altaGen(dna) {
+  return instance.post("mutant", {
+    Dna: dna
+    });
+}
 export function getStats() {
     return instance.get("/stats");
     // return fetch("https://cerebroxmenapi.azurewebsites.net/stats",{

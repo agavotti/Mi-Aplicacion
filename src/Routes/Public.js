@@ -11,6 +11,7 @@ import Stats from '../Pages/Stats';
 import Login from '../Pages/Login';
 import React from 'react'; 
 import Registro from '../Pages/Registro';
+import AltaGen from '../Pages/AltaGen';
 
 function Public() {
     return (
@@ -20,6 +21,7 @@ function Public() {
                 <Route path="/" element={<Home />} />
                 <Route path="/registro" element={<Registro />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/AltaGen" element={<AltaGen />} />
                 <Route path="/Gen/:id" element={<DetalleGen />} />
                 <Route path="/stats" element={<Stats />} />
             </Routes>
