@@ -1,19 +1,13 @@
 
 import React,{useState,useEffect} from 'react';
 import Gen from '../Components/Gen';
-import {getAll,getStats} from "../Services/genServices"
+import {getAll} from "../Services/genServices"
 function Home() {
   const [genes,setGenes] = useState([])
   const [loading,setLoading] = useState(true)
-  const handleClick = ()=>{
-    
-  }
-  /*function(res){
-    return res.json()
-  }*/
+
   useEffect(
     ()=>{
-      console.log("useEffect")
       getAll()
       .then(response=>{
         if(response.data){
@@ -25,22 +19,19 @@ function Home() {
       .catch(e=>{
         console.log(e)
       })
-
-      
-      console.log("Hola")
     },
     []
   )
   if(loading){
     return (
-      <div>
+      <div className="body">
         Cargando ...
   
       </div>
     );
   }else{
     return (
-      <div className="body">
+      <div className="body flex">
         {genes.map(genVar=><Gen datos={genVar} />)}
       </div>
     );

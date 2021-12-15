@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 
-import Gen from '../Components/Gen';
+import Stat from '../Components/Stat';
 import {getStats} from "../Services/genServices"
 function Stats() {
   const [stats,setStats] = useState([])
@@ -26,7 +26,7 @@ function Stats() {
   )
   if(loading){
     return (
-      <div>
+      <div className="body">
         Cargando ...
   
       </div>
@@ -34,7 +34,7 @@ function Stats() {
   }else{
     return (
       <div className="body">
-        {<Gen datos={stats} />}
+        {<Stat datos={stats} />}
       </div>
     );
   }

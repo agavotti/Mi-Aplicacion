@@ -10,8 +10,7 @@ import DetalleGen from '../Pages/DetalleGen';
 import Stats from '../Pages/Stats';
 import Login from '../Pages/Login';
 import React from 'react'; 
-import Register from '../Pages/Registro';
-import ListaGenes from '../Pages/ListaGenes';
+import Registro from '../Pages/Registro';
 
 function Public() {
     return (
@@ -19,10 +18,10 @@ function Public() {
             <Menu />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/registro" element={<Registro />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/Gen/:id" element={<DetalleGen />} />
                 <Route path="/stats" element={<Stats />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
             </Routes>
             <Footer />
         </Router>

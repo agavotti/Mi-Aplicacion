@@ -26,7 +26,7 @@ function ListaGenes() {
   )
   if(loading){
     return (
-      <div>
+      <div className="body">
         Cargando ...
   
       </div>

@@ -26,14 +26,14 @@ function DetalleGen() {
   )
   if(loading){
     return (
-      <div>
+      <div className="body detalle">
         Cargando ...
   
       </div>
     );
   }else{
     return (
-      <div>
+      <div className="body detalle">
         <p>{gen.id}</p>
         <p>{gen.Dna.map(genesCadenas=><li>{genesCadenas}</li>)}</p>
         <p>Es Mutante: {booleanToString(gen.EsMutante)}</p>
