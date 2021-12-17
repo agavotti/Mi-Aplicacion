@@ -6,7 +6,9 @@ export function getByID(id) {
   return instance.get("mutant/" + id);
 }
 export function altaGen(dna) {
-  return instance.post("mutant", dna);
+  return instance.post("mutant", {
+    Dna: dna
+    });
 }
 export function getStats() {
     return instance.get("/stats");
