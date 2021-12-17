@@ -12,6 +12,7 @@ import Login from '../Pages/Login';
 import React from 'react'; 
 import Registro from '../Pages/Registro';
 import AltaGen from '../Pages/AltaGen';
+import NotFound from '../Pages/NotFound';
 
 function Public() {
     return (
@@ -24,6 +25,9 @@ function Public() {
                 <Route path="/AltaGen" element={<AltaGen />} />
                 <Route path="/Gen/:id" element={<DetalleGen />} />
                 <Route path="/stats" element={<Stats />} />
+
+
+                <Route path="/*" element={<NotFound />} />
             </Routes>
             <Footer />
         </Router>

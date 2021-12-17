@@ -1,27 +1,20 @@
 
 import React, {useState} from 'react';
+import { useForm } from "react-hook-form";
+import FormGroup from '../Components/FormGroup';
 
 function Login() {
-  const [form, setForm] = useState({Email:'', Password:''});
-  const handleSubmit = (e) => { 
-    e.preventDefault();
-  }
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setForm({...form, [name]: value});
-    }
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
+
     return (
       <div className="body">
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input type="text" name="Email" value={form.Email} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" name="Password" value={form.Password} onChange={handleChange} />
-        </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <FormGroup label="Email" type="email" register={{...register("Email",{required:true})}} />
+        {errors.Email && <span>Es necesario un mail</span>}
+        <FormGroup label="Password" type="password" register={{...register("Password",{required:true,minLength:6})}} />
+        {errors.Password?.type==="required" &&  <div>El campo Contraseña es obligatorio</div>}
+        {errors.Password?.type==="minLength" &&  <div>Debe completar al menos 6 caracteres</div>}
         <button type="submit">Login</button>
       </form>
     </div>
