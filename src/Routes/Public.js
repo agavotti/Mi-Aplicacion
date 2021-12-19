@@ -20,6 +20,7 @@ function Public() {
             <Menu />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/Mi-Aplicacion" element={<Home />} />
                 <Route path="/registro" element={<Registro />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/AltaGen" element={<AltaGen />} />
