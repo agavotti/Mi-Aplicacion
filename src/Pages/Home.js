@@ -2,10 +2,12 @@
 import React,{useState,useEffect} from 'react';
 import Gen from '../Components/Gen';
 import {getAll} from "../Services/genServices"
+import {CardGroup, Spinner} from 'react-bootstrap'
+import firebase from '../Config/firebase';
 function Home() {
   const [genes,setGenes] = useState([])
   const [loading,setLoading] = useState(true)
-
+  console.log("firebase",firebase);
   useEffect(
     ()=>{
       getAll()
@@ -24,16 +26,15 @@ function Home() {
   )
   if(loading){
     return (
-      <div className="body">
-        Cargando ...
-  
-      </div>
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
     );
   }else{
     return (
-      <div className="body flex">
+      <CardGroup>
         {genes.map(genVar=><Gen datos={genVar} />)}
-      </div>
+      </CardGroup>
     );
   }
   

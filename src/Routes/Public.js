@@ -13,11 +13,12 @@ import React from 'react';
 import Registro from '../Pages/Registro';
 import AltaGen from '../Pages/AltaGen';
 import NotFound from '../Pages/NotFound';
-
+import { Container } from 'react-bootstrap';
 function Public() {
     return (
         <Router>
             <Menu />
+            <Container>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Mi-Aplicacion" element={<Home />} />
@@ -30,6 +31,7 @@ function Public() {
 
                 <Route path="/*" element={<NotFound />} />
             </Routes>
+            </Container>
             <Footer />
         </Router>
     );

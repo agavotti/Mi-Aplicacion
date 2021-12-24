@@ -1,6 +1,6 @@
 
 import React, {useState} from 'react';
-
+import Button from 'react-bootstrap/Button'
 function Registro() {
   
   const [form, setForm] = useState({Nombre:'', Apellido:'', Email:'', Password:''});
@@ -33,7 +33,7 @@ function Registro() {
             <label>Password:</label>
             <input type="password" name="Password" value={form.Password} onChange={handleChange} />
           </div>
-          <button type="submit">Registrar</button>
+          <Button type="submit" variant="primary" size="lg">Registrar</Button>{' '}
         </form>
       </div>
     );
