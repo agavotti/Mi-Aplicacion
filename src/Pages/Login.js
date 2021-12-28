@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import { useForm } from "react-hook-form";
 import FormGroup from '../Components/FormGroup';
+import Button from 'react-bootstrap/Button'
 
 function Login() {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -15,7 +16,7 @@ function Login() {
         <FormGroup label="Password" type="password" register={{...register("Password",{required:true,minLength:6})}} />
         {errors.Password?.type==="required" &&  <div>El campo Contraseña es obligatorio</div>}
         {errors.Password?.type==="minLength" &&  <div>Debe completar al menos 6 caracteres</div>}
-        <button type="submit">Login</button>
+        <Button type="submit" variant="primary" size="lg">Login</Button>{' '}
       </form>
     </div>
     );

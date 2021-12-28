@@ -49,7 +49,7 @@
   -moz-osx-font-smoothing: antialiased;
   
 }
-
+/* 
 .flex{
   display: flex;
 }
@@ -238,4 +238,4 @@ a{
   max-width: 9em;
   text-align: center;
   text-justify: inter-word;
-}
+} */

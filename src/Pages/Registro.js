@@ -1,38 +1,27 @@
 
 import React, {useState} from 'react';
+import { useForm } from "react-hook-form";
+import FormGroup from '../Components/FormGroup';
 import Button from 'react-bootstrap/Button'
 function Registro() {
   
-  const [form, setForm] = useState({Nombre:'', Apellido:'', Email:'', Password:''});
-  const handleSubmit = (e) => { 
-    console.log("handleSubmit", form)
-    e.preventDefault();
-  }
-  const handleChange = (e) => {
-  const name = e.target.name;
-  const value = e.target.value;
-  console.log("handleChange", name, value)
-  setForm({...form, [name]: value});
-  }
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
+  
     return (
       <div className="body">
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Nombre:</label>
-            <input type="text" name="Nombre" value={form.Nombre} onChange={handleChange} />
-          </div>
-          <div>
-            <label>Apellido:</label>
-            <input type="text" name="Apellido" value={form.Apellido} onChange={handleChange} />
-          </div>
-          <div>
-            <label>Email:</label>
-            <input type="text" name="Email" value={form.Email} onChange={handleChange} />
-          </div>
-          <div>
-            <label>Password:</label>
-            <input type="password" name="Password" value={form.Password} onChange={handleChange} />
-          </div>
+        <form  onSubmit={handleSubmit(onSubmit)}>
+
+          <FormGroup label="Nombre" type="nombre" register={{...register("Nombre",{required:true})}} />
+          {errors.Nombre && <span>Es necesario un mail</span>}
+          <FormGroup label="Apellido" type="apellido" register={{...register("Apellido",{required:true})}} />
+          {errors.Nombre && <span>Es necesario un mail</span>}
+          <FormGroup label="Email" type="email" register={{...register("Email",{required:true})}} />
+          {errors.Email && <span>Es necesario un mail</span>}
+          <FormGroup label="Password" type="password" register={{...register("Password",{required:true,minLength:6})}} />
+          {errors.Password?.type==="required" &&  <div>El campo Contraseña es obligatorio</div>}
+          {errors.Password?.type==="minLength" &&  <div>Debe completar al menos 6 caracteres</div>}
+          
           <Button type="submit" variant="primary" size="lg">Registrar</Button>{' '}
         </form>
       </div>

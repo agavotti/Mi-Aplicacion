@@ -12,6 +12,7 @@ import Login from '../Pages/Login';
 import React from 'react'; 
 import Registro from '../Pages/Registro';
 import AltaGen from '../Pages/AltaGen';
+import AltaGen2 from '../Pages/AltaGen2';
 import NotFound from '../Pages/NotFound';
 import { Container } from 'react-bootstrap';
 function Public() {
@@ -25,6 +26,7 @@ function Public() {
                 <Route path="/registro" element={<Registro />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/AltaGen" element={<AltaGen />} />
+                <Route path="/AltaGen2" element={<AltaGen2 />} />
                 <Route path="/Gen/:id" element={<DetalleGen />} />
                 <Route path="/stats" element={<Stats />} />
 
