@@ -1,0 +1,14 @@
+.imgProducto{
+    max-width: 100px;
+}
+
+.colorNegro{
+    color: "black"
+  }
+
+.cardContainer{
+    margin-top: "10px";
+    margin-right: "10px";
+    width: '18rem';
+    flex: 1
+  }

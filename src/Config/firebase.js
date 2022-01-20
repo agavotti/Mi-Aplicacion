@@ -1,21 +1,22 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import firebase from "firebase/compat/app";
+import firebase from 'firebase/compat/app'
+//Agregar estas dos lineas
+import "firebase/compat/firestore"
+import "firebase/compat/auth"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDf4GtUT1D-ftzNg1rTrLrE4SbRJFvocoE",
-  authDomain: "cerebroxmenpage.firebaseapp.com",
-  projectId: "cerebroxmenpage",
-  storageBucket: "cerebroxmenpage.appspot.com",
-  messagingSenderId: "331000969378",
-  appId: "1:331000969378:web:f3142df4e41e39e8523ffb",
-  measurementId: "G-XBPD192X3L"
+  apiKey: "AIzaSyCE9Lfsz-_ciXM5HpOnDrERNgNskBTla5I",
+  authDomain: "proyectocursoreactintento.firebaseapp.com",
+  projectId: "proyectocursoreactintento",
+  storageBucket: "proyectocursoreactintento.appspot.com",
+  messagingSenderId: "524800360025",
+  appId: "1:524800360025:web:901304306ab3524c993b48"
 };
 
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig)
+firebase.db = firebase.firestore()
+firebase.auth = firebase.auth()
 export default firebase;

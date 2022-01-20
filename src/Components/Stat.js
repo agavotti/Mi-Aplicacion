@@ -1,4 +1,4 @@
-import {Card, Button, Row, Col} from "react-bootstrap"
+import {Card} from "react-bootstrap"
 
 function Stat(props) {
   const {datos} = props

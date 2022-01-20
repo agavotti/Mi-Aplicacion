@@ -2,6 +2,7 @@
 import React from 'react';
 import {Link} from "react-router-dom"
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
+
 function Menu() {
   
     return (
@@ -16,13 +17,10 @@ function Menu() {
               <Nav.Link as={Link} to="/AltaGen">AltaGen</Nav.Link>
               <Nav.Link as={Link} to="/AltaGen2">AltaGen2</Nav.Link>
               <Nav.Link as={Link} to="/stats">Stats</Nav.Link>
-              {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-              </NavDropdown> */}
+              <NavDropdown title="Productos" id="basic-nav-dropdown">
+                <NavDropdown.Item as={Link} to="/productos/Lista">Listar</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/productos/alta">Alta</NavDropdown.Item>
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
       </Navbar>

@@ -1,43 +1,36 @@
 
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Gen from '../Components/Gen';
-import {getAll} from "../Services/genServices"
-import {CardGroup, Spinner} from 'react-bootstrap'
-import firebase from '../Config/firebase';
+import { getAll } from "../Services/genServices"
+import { CardGroup } from 'react-bootstrap'
+import Loading from '../Components/Loading';
 function Home() {
-  const [genes,setGenes] = useState([])
-  const [loading,setLoading] = useState(true)
-  console.log("firebase",firebase);
+  const [genes, setGenes] = useState([])
+  const [loading, setLoading] = useState(true)
   useEffect(
-    ()=>{
+    () => {
       getAll()
-      .then(response=>{
-        if(response.data){
-          setLoading(false)
-          setGenes(response.data)
-          
-        }
-      })
-      .catch(e=>{
-        console.log(e)
-      })
+        .then(response => {
+          if (response.data) {
+            setLoading(false)
+            setGenes(response.data)
+
+          }
+        })
+        .catch(e => {
+          console.log(e)
+        })
     },
     []
   )
-  if(loading){
     return (
-      <Spinner animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
-    );
-  }else{
-    return (
-      <CardGroup>
-        {genes.map(genVar=><Gen datos={genVar} />)}
-      </CardGroup>
+      <Loading loading={loading} configuration={{ animation: "grow", variant: "primary" }}>
+        <CardGroup>
+          {genes.map(gen => <Gen key={gen.ID.toString()} datos={gen} />)}
+        </CardGroup>
+      </Loading>
     );
   }
-  
-}
+
 
 export default Home;
