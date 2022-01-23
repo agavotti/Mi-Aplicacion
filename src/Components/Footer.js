@@ -1,10 +1,17 @@
 
 import React from 'react';
-import {Link} from "react-router-dom"
+
 function Footer() {
-  
+  const styles = {
+    alinearBottom:{
+      position: 'absolute',
+      bottom: 0,
+      width: '100%',
+      textAlign: 'center'
+    }
+  }
     return (
-      <div className='AnclarBottom'>
+      <div className={styles.alinearBottom}>
         Copyrigth ...
   
       </div>

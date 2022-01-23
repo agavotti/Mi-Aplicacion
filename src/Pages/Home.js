@@ -1,42 +1,36 @@
 
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Gen from '../Components/Gen';
-import {getAll} from "../Services/genServices"
+import { getAll } from "../Services/genServices"
+import { CardGroup } from 'react-bootstrap'
+import Loading from '../Components/Loading';
 function Home() {
-  const [genes,setGenes] = useState([])
-  const [loading,setLoading] = useState(true)
-
+  const [genes, setGenes] = useState([])
+  const [loading, setLoading] = useState(true)
   useEffect(
-    ()=>{
+    () => {
       getAll()
-      .then(response=>{
-        if(response.data){
-          setLoading(false)
-          setGenes(response.data)
-          
-        }
-      })
-      .catch(e=>{
-        console.log(e)
-      })
+        .then(response => {
+          if (response.data) {
+            setLoading(false)
+            setGenes(response.data)
+
+          }
+        })
+        .catch(e => {
+          console.log(e)
+        })
     },
     []
   )
-  if(loading){
     return (
-      <div className="body">
-        Cargando ...
-  
-      </div>
-    );
-  }else{
-    return (
-      <div className="body flex">
-        {genes.map(genVar=><Gen datos={genVar} />)}
-      </div>
+      <Loading loading={loading} configuration={{ animation: "grow", variant: "primary" }}>
+        <CardGroup>
+          {genes.map(gen => <Gen key={gen.ID.toString()} datos={gen} />)}
+        </CardGroup>
+      </Loading>
     );
   }
-  
-}
+
 
 export default Home;

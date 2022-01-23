@@ -1,4 +1,5 @@
 {
+  "homepage": "https://agavotti.github.io/Mi-Aplicacion",
   "name": "mi-aplicacion",
   "version": "0.1.0",
   "private": true,
@@ -7,10 +8,15 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
+    "bootstrap": "^5.1.0",
     "cors": "^2.8.5",
+    "firebase": "^9.6.1",
+    "formik": "^2.2.9",
     "moment": "^2.29.1",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0-rc.1",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.22.1",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "switch": "0.0.0",
@@ -20,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
