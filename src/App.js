@@ -1,15 +1,15 @@
 import './App.css';
 import React from 'react';
 import Public from './Routes/Public';
-
+import AuthProvider from './Context/AuthProvider';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <header className="App-header">
+      <AuthProvider>
         <Public />
-        
-      </header>
-    </div>
+      </AuthProvider>
+    </header>
+
   );
 }
 
