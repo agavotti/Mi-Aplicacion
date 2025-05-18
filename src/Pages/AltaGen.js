@@ -9,7 +9,6 @@ import AlertCustom from '../Components/AlertCustom';
 function AltaGen() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {
-    console.log(data);
     setForm({ ...data })
     // var adn = [data.Cadena1, data.Cadena2, data.Cadena3, data.Cadena4, data.Cadena5, data.Cadena6];
     request(form);
@@ -24,7 +23,6 @@ function AltaGen() {
   const request = async (adn) => {
     try {
       setLoading(true);
-      console.log("request", adn);
       const response = await altaGen(adn);
       if (response.status === 200) {
 

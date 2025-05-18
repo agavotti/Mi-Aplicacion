@@ -4,17 +4,18 @@ function Stat(props) {
   const {datos} = props
   const styles = {
     cardContainer:{
-      marginTop: "10px"
+      marginTop: "10px",
+      color:"white"
     }
   }
   return (
     <Card bg="dark" border="light" key={datos.ID} style={styles.cardContainer}>
     <Card.Body >
       <Card.Title>Estadisticas</Card.Title>
-      <Card.Text>
-        <p>Humanos: {datos.CountHumantDNA}</p>
-        <p>Mutantes: {datos.CountMutantDNA}</p>
-        <p>Ratio: {datos.Ratio}</p>
+      <Card.Text as="div">
+        <div>Humanos: {datos.countHumanDna}</div>
+        <div>Mutantes: {datos.countMutantDna}</div>
+        <div>Ratio: {datos.ratio}</div>
       </Card.Text>
     </Card.Body>
     </Card>

@@ -3,12 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom"
 import Loading from '../Components/Loading';
 import { getByIdProductos } from "../Services/ProductosServices";
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 
 function DetalleProducto() {
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(true)
     const { id } = useParams();
-    console.log("id", id)
+    const navigate = useNavigate();
     useEffect(
         () => {
             const request = async () => {
@@ -27,12 +29,20 @@ function DetalleProducto() {
         },
         [id]
     )
+    const handleCancel = () => {
+        navigate('/productos/Lista');
+    };
 
     return (
         <Loading loading={loading} configuration={{ animation: "grow", variant: "primary" }}>
             <p>{producto.name}</p>
             <p>{producto.price}</p>
             <p>{producto.description}</p>
+            <div className="mt-3 d-flex justify-content-between">
+                <Button variant="secondary" onClick={handleCancel}>
+                    Cancelar
+                </Button>
+            </div>
         </Loading>
     );
 

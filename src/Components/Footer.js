@@ -1,23 +1,17 @@
-
 import React from 'react';
 
 function Footer() {
-  const styles = {
-    alinearBottom:{
-      position: 'absolute',
-      bottom: 0,
-      width: '100%',
-      textAlign: 'center'
-    }
-  }
-    return (
-      <div className={styles.alinearBottom}>
-        Copyrigth ...
-  
-      </div>
-    );
-  
-  
+  return (
+    <footer style={{
+      marginTop: 'auto',
+      textAlign: 'center',
+      padding: '1rem',
+      backgroundColor: '#f8f9fa',
+      color: '#212529'
+    }}>
+      © 2025 Cerebro. Todos los derechos reservados.
+    </footer>
+  );
 }
 
 export default Footer;

@@ -1,20 +1,16 @@
 import instance from "../Config/axios";
 export function getAll() {
-  return instance.get("all");
+  return instance.get("/api/mutant/all");
 }
 export function getByID(id) {
-  return instance.get("mutant/" + id);
+  return instance.get("/api/mutant/" + id);
 }
 export function altaGen(dna) {
-  return instance.post("mutant", {
-    Dna: dna
+  console.log("Payload enviado al backend:", dna);
+  return instance.post("/api/mutant", {
+    dna: dna
     });
 }
 export function getStats() {
-    return instance.get("/stats");
-    // return fetch("https://cerebroxmenapi.azurewebsites.net/stats",{
-    //     method:"GET",
-    //     mode:"no-cors",
-    // })
-    // .then(res=>res.json());
+    return instance.get("/api/mutant/stats");
 }

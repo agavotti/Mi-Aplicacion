@@ -1,6 +1,6 @@
 
-import React from 'react';
-import { Link } from "react-router-dom"
+import React, { useContext } from 'react';
+import { Link, useNavigate  } from "react-router-dom"
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import AuthContext from '../Context/AuthContext';
 
@@ -10,6 +10,12 @@ function Menu({ statusLogin }) {
       color: "black"
     }
   }
+  const context = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    context.logoutUser();       
+    navigate("/login");        
+  };
   return (
     <AuthContext.Consumer>
       {
@@ -38,7 +44,7 @@ function Menu({ statusLogin }) {
                       <NavDropdown.Item as={Link} to="/productos/Lista">Listar</NavDropdown.Item>
                       <NavDropdown.Item as={Link} to="/productos/alta">Alta</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link onClick={context.logoutUser}>Salir</Nav.Link>
+                    <Nav.Link onClick={handleLogout}>Salir</Nav.Link>
                   </>
                 }
               </Nav>

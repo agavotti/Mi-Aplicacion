@@ -23,44 +23,46 @@ import AuthContext from '../Context/AuthContext';
 function Public() {
     return (
         <Router>
-            <Menu />
-            <Container>
-                <AuthContext.Consumer>
-                    {
-                        context =>
-                            <Routes>
-                                <Route path="/" element={<Home />} />
-                                <Route path="/Mi-Aplicacion" element={<Home />} />
-                                <Route path="/registro" element={<Registro />} />
-                                <Route path="/login" element={<Login />} />
-                                {
-                                    context.userLogin &&
-                                    <Route path="/AltaGen" element={<AltaGen />} />
-                                }
-                                {
-                                    context.userLogin &&
-                                    <Route path="/AltaGen2" element={<AltaGen2 />} />
-                                }
-                                {
-                                    context.userLogin &&
-                                    <Route path="/productos/alta" element={<ProductosAlta />} />
-                                }
-                                {
-                                    context.userLogin &&
-                                    <Route path="/productos/modificar/:id" element={<ProductosModificar />} />
-                                }
-                                <Route path="/productos/Lista" element={<ListaProductos />} />
-                                <Route path="/producto/:id" element={<DetalleProducto />} />
-                                <Route path="/Gen/:id" element={<DetalleGen />} />
-                                <Route path="/stats" element={<Stats />} />
+            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+                <Menu />
+                <Container>
+                    <AuthContext.Consumer>
+                        {
+                            context =>
+                                <Routes>
+                                    <Route path="/" element={<Home />} />
+                                    <Route path="/Mi-Aplicacion" element={<Home />} />
+                                    <Route path="/registro" element={<Registro />} />
+                                    <Route path="/login" element={<Login />} />
+                                    {
+                                        context.userLogin &&
+                                        <Route path="/AltaGen" element={<AltaGen />} />
+                                    }
+                                    {
+                                        context.userLogin &&
+                                        <Route path="/AltaGen2" element={<AltaGen2 />} />
+                                    }
+                                    {
+                                        context.userLogin &&
+                                        <Route path="/productos/alta" element={<ProductosAlta />} />
+                                    }
+                                    {
+                                        context.userLogin &&
+                                        <Route path="/productos/modificar/:id" element={<ProductosModificar />} />
+                                    }
+                                    <Route path="/productos/Lista" element={<ListaProductos />} />
+                                    <Route path="/producto/:id" element={<DetalleProducto />} />
+                                    <Route path="/Gen/:id" element={<DetalleGen />} />
+                                    <Route path="/stats" element={<Stats />} />
 
 
-                                <Route path="/*" element={<NotFound />} />
-                            </Routes>
-                    }
-                </AuthContext.Consumer>
-            </Container>
-            <Footer />
+                                    <Route path="/*" element={<NotFound />} />
+                                </Routes>
+                        }
+                    </AuthContext.Consumer>
+                </Container>
+                <Footer />
+            </div>
         </Router>
     );
 }

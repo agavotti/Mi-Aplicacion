@@ -18,16 +18,25 @@ function Login() {
   const onSubmit = async (data) => {
     try {
       setLoading(true)
-      console.log("antes de ir a firebase")
+      // console.log("antes de ir a firebase")
+      console.log(data.email, data.password)
       const responseUser = await firebase.auth.signInWithEmailAndPassword(data.email, data.password)
       if (responseUser.user.uid) {
-        console.log(responseUser)
+        // console.log(responseUser)
+        // console.log("responseUser.user.uid: ",responseUser.user.uid)
         const userInfo = await firebase.db.collection("usuarios")
           .where("userId", "==", responseUser.user.uid)
           .get()
-          console.log(userInfo)
+          // console.log("userInfo: ", userInfo)
+          if (!userInfo.empty) {
+            userInfo.forEach(doc => {
+              console.log("User Info: ", doc.data());
+            });
+          } else {
+            console.log("No se encontraron usuarios con ese userId.");
+          }
         if (userInfo) {
-          console.log(userInfo)
+          // console.log(userInfo)
           setLoading(false)
           context.loginUser(userInfo.docs[0]?.data())
           setAlert({ variant: "success", text: "Bienvenido" })
@@ -37,7 +46,7 @@ function Login() {
       else {
         setLoading(false)
         setAlert({ variant: "danger", text: "Usuario o contraseña incorrectos" })
-        console.log(responseUser)
+        // console.log(responseUser)
       }
     } catch (e) {
       console.log(e)

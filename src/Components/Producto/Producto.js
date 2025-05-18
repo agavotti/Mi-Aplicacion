@@ -17,6 +17,7 @@ const styles = {
 function Producto(props) {
     const { datos } = props
     //const datos = props.datos
+
     return (
         <AuthContext.Consumer>
             {
@@ -25,9 +26,9 @@ function Producto(props) {
                         <Card bg="dark" border="light" style={styles.cardContainer}>
                             <Card.Img className="imgProducto" variant="top" src={datos.thumbnail} />
                             <Card.Body>
-                                <Card.Title>{datos.name}</Card.Title>
-                                <Card.Subtitle>$ {datos.price}</Card.Subtitle>
-                                <Card.Text>
+                                <Card.Title className="text-white">{datos.name}</Card.Title>
+                                <Card.Subtitle className="text-white">$ {datos.price}</Card.Subtitle>
+                                <Card.Text className="text-white">
                                     {datos.description}
                                 </Card.Text>
                                 <Actions userLogin={context.userLogin} datos={datos} />

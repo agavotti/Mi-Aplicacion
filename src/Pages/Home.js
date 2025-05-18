@@ -26,7 +26,11 @@ function Home() {
     return (
       <Loading loading={loading} configuration={{ animation: "grow", variant: "primary" }}>
         <CardGroup>
-          {genes.map(gen => <Gen key={gen.ID.toString()} datos={gen} />)}
+          {genes.map((gen, index) =>
+            gen && gen.id !== undefined
+              ? <Gen key={gen.id.toString()} datos={gen} />
+              : null
+          )}
         </CardGroup>
       </Loading>
     );
