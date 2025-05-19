@@ -8,10 +8,6 @@ import { Navigate } from 'react-router-dom';
 
 function Home() {
   const context = useContext(AuthContext);
-  if (!context.userLogin) {
-    return <Navigate to="/login" replace />;
-  }
-
   const [genes, setGenes] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(
@@ -29,18 +25,20 @@ function Home() {
     },
     []
   )
-    return (
-      <Loading loading={loading} configuration={{ animation: "grow", variant: "primary" }}>
-        <CardGroup>
-          {genes.map((gen, index) =>
-            gen && gen.id !== undefined
-              ? <Gen key={gen.id.toString()} datos={gen} />
-              : null
-          )}
-        </CardGroup>
-      </Loading>
-    );
+  if (!context.userLogin) {
+    return <Navigate to="/login" replace />;
   }
-
+  return (
+    <Loading loading={loading} configuration={{ animation: "grow", variant: "primary" }}>
+      <CardGroup>
+        {genes.map((gen, index) =>
+          gen && gen.id !== undefined
+            ? <Gen key={gen.id.toString()} datos={gen} />
+            : null
+        )}
+      </CardGroup>
+    </Loading>
+  );
+}
 
 export default Home;
