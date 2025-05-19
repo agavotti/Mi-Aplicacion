@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Mi-Aplicacion/static/css/main.35940484.css",
-    "main.js": "/Mi-Aplicacion/static/js/main.71348ef6.js",
+    "main.css": "/Mi-Aplicacion/static/css/main.8d076026.css",
+    "main.js": "/Mi-Aplicacion/static/js/main.6b532f3f.js",
     "static/js/488.ce136492.chunk.js": "/Mi-Aplicacion/static/js/488.ce136492.chunk.js",
     "index.html": "/Mi-Aplicacion/index.html",
-    "main.35940484.css.map": "/Mi-Aplicacion/static/css/main.35940484.css.map",
-    "main.71348ef6.js.map": "/Mi-Aplicacion/static/js/main.71348ef6.js.map",
+    "main.8d076026.css.map": "/Mi-Aplicacion/static/css/main.8d076026.css.map",
+    "main.6b532f3f.js.map": "/Mi-Aplicacion/static/js/main.6b532f3f.js.map",
     "488.ce136492.chunk.js.map": "/Mi-Aplicacion/static/js/488.ce136492.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.35940484.css",
-    "static/js/main.71348ef6.js"
+    "static/css/main.8d076026.css",
+    "static/js/main.6b532f3f.js"
   ]
 }
