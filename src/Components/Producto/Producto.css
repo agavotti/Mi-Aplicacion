@@ -3,12 +3,12 @@
 }
 
 .colorNegro{
-    color: "black"
-  }
+    color: black;
+}
 
 .cardContainer{
-    margin-top: "10px";
-    margin-right: "10px";
-    width: '18rem';
-    flex: 1
-  }
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 18rem;
+    flex: 1;
+}

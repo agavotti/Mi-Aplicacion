@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import FormGroup from '../Components/Forms/FormGroup';
@@ -48,15 +47,15 @@ function Registro() {
     <div className="body">
       <form onSubmit={handleSubmit(onSubmit)}>
 
-        <FormGroup label="Nombre" type="nombre" register={{ ...register("nombre", { required: true }) }} />
-        {errors.Nombre && <span>Es necesario un mail</span>}
-        <FormGroup label="Apellido" type="apellido" register={{ ...register("apellido", { required: true }) }} />
-        {errors.Nombre && <span>Es necesario un mail</span>}
+        <FormGroup label="Nombre" type="text" register={{ ...register("nombre", { required: true }) }} />
+        {errors.nombre && <span>El nombre es obligatorio</span>}
+        <FormGroup label="Apellido" type="text" register={{ ...register("apellido", { required: true }) }} />
+        {errors.apellido && <span>El apellido es obligatorio</span>}
         <FormGroup label="Email" type="email" register={{ ...register("email", { required: true }) }} />
-        {errors.Email && <span>Es necesario un mail</span>}
+        {errors.email && <span>El email es obligatorio</span>}
         <FormGroup label="Password" type="password" register={{ ...register("password", { required: true, minLength: 6 }) }} />
-        {errors.Password?.type === "required" && <div>El campo Contraseña es obligatorio</div>}
-        {errors.Password?.type === "minLength" && <div>Debe completar al menos 6 caracteres</div>}
+        {errors.password?.type === "required" && <div>El campo Contraseña es obligatorio</div>}
+        {errors.password?.type === "minLength" && <div>Debe completar al menos 6 caracteres</div>}
 
         <ButtonWithLoading loading={loading} type="submit" variant="primary">Registrarse</ButtonWithLoading>
         <AlertCustom {...alert} />

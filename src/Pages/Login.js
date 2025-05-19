@@ -1,4 +1,3 @@
-
 import React, { useState, useContext } from 'react';
 import { useForm } from "react-hook-form";
 import FormGroup from '../Components/Forms/FormGroup';
@@ -61,10 +60,10 @@ function Login() {
     <div className="body">
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormGroup label="Email" type="email" register={{ ...register("email", { required: true }) }} />
-        {errors.Email && <span>Es necesario un mail</span>}
+        {errors.email && <span>Es necesario un mail</span>}
         <FormGroup label="Password" type="password" register={{ ...register("password", { required: true, minLength: 6 }) }} />
-        {errors.Password?.type === "required" && <div>El campo Contraseña es obligatorio</div>}
-        {errors.Password?.type === "minLength" && <div>Debe completar al menos 6 caracteres</div>}
+        {errors.password?.type === "required" && <div>El campo Contraseña es obligatorio</div>}
+        {errors.password?.type === "minLength" && <div>Debe completar al menos 6 caracteres</div>}
         <ButtonWithLoading loading={loading} type="submit" variant="primary">Ingresar</ButtonWithLoading>
         <AlertCustom {...alert} />
       </form>

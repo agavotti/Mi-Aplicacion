@@ -50,12 +50,22 @@ function Public() {
                                         context.userLogin &&
                                         <Route path="/productos/modificar/:id" element={<ProductosModificar />} />
                                     }
-                                    <Route path="/productos/Lista" element={<ListaProductos />} />
-                                    <Route path="/producto/:id" element={<DetalleProducto />} />
-                                    <Route path="/Gen/:id" element={<DetalleGen />} />
-                                    <Route path="/stats" element={<Stats />} />
-
-
+                                    {
+                                        context.userLogin &&
+                                        <Route path="/productos/Lista" element={<ListaProductos />} />
+                                    }
+                                    {
+                                        context.userLogin &&
+                                        <Route path="/producto/:id" element={<DetalleProducto />} />
+                                    }
+                                    {
+                                        context.userLogin &&
+                                        <Route path="/Gen/:id" element={<DetalleGen />} />
+                                    }
+                                    {
+                                        context.userLogin &&
+                                        <Route path="/stats" element={<Stats />} />
+                                    }
                                     <Route path="/*" element={<NotFound />} />
                                 </Routes>
                         }

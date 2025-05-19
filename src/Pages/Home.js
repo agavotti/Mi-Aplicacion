@@ -1,10 +1,17 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Gen from '../Components/Gen';
 import { getAll } from "../Services/genServices"
 import { CardGroup } from 'react-bootstrap'
 import Loading from '../Components/Loading';
+import AuthContext from '../Context/AuthContext';
+import { Navigate } from 'react-router-dom';
+
 function Home() {
+  const context = useContext(AuthContext);
+  if (!context.userLogin) {
+    return <Navigate to="/login" replace />;
+  }
+
   const [genes, setGenes] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(
@@ -14,7 +21,6 @@ function Home() {
           if (response.data) {
             setLoading(false)
             setGenes(response.data)
-
           }
         })
         .catch(e => {

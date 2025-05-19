@@ -1,9 +1,9 @@
-
 import { Card } from 'react-bootstrap'
 import './Producto.css'
 import { Col } from 'react-bootstrap'
 import Actions from "./Actions"
 import AuthContext from '../../Context/AuthContext'
+import PropTypes from 'prop-types'
 
 const styles = {
     cardContainer: {
@@ -39,5 +39,9 @@ function Producto(props) {
         </AuthContext.Consumer>
     );
 }
+
+Producto.propTypes = {
+  datos: PropTypes.object.isRequired
+};
 
 export default Producto;

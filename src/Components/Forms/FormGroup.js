@@ -1,6 +1,7 @@
-
 import React from 'react';
-import {Form} from 'react-bootstrap'
+import {Form} from 'react-bootstrap';
+import PropTypes from 'prop-types';
+
 function FormGroup(props) {
     const {label,type,register, placeholder, helptext} = props
     return (
@@ -13,4 +14,13 @@ function FormGroup(props) {
       </Form.Group>
     );
 }
+
+FormGroup.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  register: PropTypes.object.isRequired,
+  placeholder: PropTypes.string,
+  helptext: PropTypes.string
+};
+
 export default FormGroup;

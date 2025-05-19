@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { Card, Button, Col } from "react-bootstrap"
+import PropTypes from 'prop-types'
 
 function Gen(props) {
   const { datos } = props
@@ -34,5 +35,9 @@ function Gen(props) {
     </Col>
   );
 }
+
+Gen.propTypes = {
+  datos: PropTypes.object.isRequired
+};
 
 export default Gen;

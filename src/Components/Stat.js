@@ -1,4 +1,5 @@
 import {Card} from "react-bootstrap"
+import PropTypes from 'prop-types';
 
 function Stat(props) {
   const {datos} = props
@@ -22,5 +23,8 @@ function Stat(props) {
   );
 }
 
+Stat.propTypes = {
+  datos: PropTypes.object.isRequired
+};
 
 export default Stat;

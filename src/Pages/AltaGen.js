@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import FormGroup from '../Components/Forms/FormGroup';
@@ -80,17 +79,8 @@ function AltaGen() {
 
     </div>
   );
-
-
 }
 
-// function ValidarAcidos(cadena){
-//   cadena = cadena.replaceAll('C','');
-//   cadena = cadena.replaceAll('T','');
-//   cadena = cadena.replaceAll('G','');
-//   cadena = cadena.replaceAll('A','');
-//   return cadena;
-// }
-
+// AltaGen.js y AltaGen2.js tienen lógica duplicada para registrar genes. Considera unificarlas en un solo componente reutilizable para evitar duplicación de código y facilitar el mantenimiento.
 
 export default AltaGen;

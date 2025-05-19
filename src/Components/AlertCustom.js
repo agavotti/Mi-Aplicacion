@@ -1,6 +1,8 @@
 import React from "react"
 //import Button from 'react-bootstrap/Button'
 import {Alert} from 'react-bootstrap'
+import PropTypes from 'prop-types';
+
 const styles={
     alert:{
         marginTop:"10px"
@@ -16,4 +18,10 @@ function AlertCustom(props){
     )
     
 }
+
+AlertCustom.propTypes = {
+  variant: PropTypes.string,
+  text: PropTypes.string
+};
+
 export default AlertCustom;
